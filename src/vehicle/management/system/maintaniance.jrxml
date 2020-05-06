@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e63ffedf-429c-4b32-8843-3be4f6bc85a3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vmaintenance.`ID` AS vmaintenance_ID,
+     vmaintenance.`Date` AS vmaintenance_Date,
+     vmaintenance.`Fuel` AS vmaintenance_Fuel,
+     vmaintenance.`Services` AS vmaintenance_Services,
+     vmaintenance.`Repairs` AS vmaintenance_Repairs,
+     vmaintenance.`Revenue_License` AS vmaintenance_Revenue_License,
+     vmaintenance.`Insurance` AS vmaintenance_Insurance,
+     vmaintenance.`Emission_test` AS vmaintenance_Emission_test
+FROM
+     `vmaintenance` vmaintenance]]>
+	</queryString>
+	<field name="vmaintenance_ID" class="java.lang.Integer"/>
+	<field name="vmaintenance_Date" class="java.sql.Date"/>
+	<field name="vmaintenance_Fuel" class="java.lang.String"/>
+	<field name="vmaintenance_Services" class="java.lang.String"/>
+	<field name="vmaintenance_Repairs" class="java.lang.String"/>
+	<field name="vmaintenance_Revenue_License" class="java.lang.String"/>
+	<field name="vmaintenance_Insurance" class="java.lang.String"/>
+	<field name="vmaintenance_Emission_test" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="108" y="11" width="340" height="56" uuid="6d72595e-6da0-4060-b6b1-ba2994c60d9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MAINTENANCE REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="0" width="55" height="20" uuid="ea59c5cf-98ab-4e81-a893-813a06ad9cda"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="0" width="52" height="20" uuid="f402fd7c-7db8-4e8a-823a-87bf7705a017"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="57" height="20" uuid="76c83224-fd77-4aca-a618-909e21882881"/>
+				<text><![CDATA[FUEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="0" width="71" height="20" uuid="9ca60e54-fa09-4f3f-977b-fac4d145bc61"/>
+				<text><![CDATA[SERVICES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="0" width="75" height="20" uuid="2f05abbe-5019-4161-88c5-9fb18df8de28"/>
+				<text><![CDATA[LICENSE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="68" height="20" uuid="b41b84e1-836a-45af-951a-975d89b18de2"/>
+				<text><![CDATA[INSURANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="85" height="20" uuid="495eb238-e8a6-4c62-8bc8-1457a105cff5"/>
+				<text><![CDATA[EMISSION TEST]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="14" width="55" height="20" uuid="01f003a3-3490-47b2-81f6-432e3accbc95"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="14" width="52" height="20" uuid="1541ab36-4660-4db9-abd4-a159f88b296a"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="14" width="57" height="20" uuid="dd2b0b59-699f-44db-99dc-8ca0bda16b5e"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Fuel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="14" width="71" height="20" uuid="0aeacb0e-4eab-4df4-8aeb-110fa334d7c4"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Services}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="14" width="75" height="20" uuid="da7c70f3-07e7-4980-9074-d0ab063bba45"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Revenue_License}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="14" width="68" height="20" uuid="b7aa6df6-8a69-483c-9d49-c45517590862"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Insurance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="14" width="85" height="20" uuid="070b598d-3f0a-47e3-a28e-b9e8ea7d7ee7"/>
+				<textFieldExpression><![CDATA[$F{vmaintenance_Emission_test}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
