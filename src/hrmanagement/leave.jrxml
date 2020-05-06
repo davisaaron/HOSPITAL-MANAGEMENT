@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b304560-c4cc-498f-b4cd-41c3a0aa99ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     empleave.`leveid` AS empleave_leveid,
+     empleave.`type` AS empleave_type,
+     empleave.`reason` AS empleave_reason,
+     empleave.`days` AS empleave_days,
+     empleave.`from` AS empleave_from,
+     empleave.`to` AS empleave_to,
+     empleave.`empid` AS empleave_empid
+FROM
+     `empleave` empleave]]>
+	</queryString>
+	<field name="empleave_leveid" class="java.lang.String"/>
+	<field name="empleave_type" class="java.lang.String"/>
+	<field name="empleave_reason" class="java.lang.String"/>
+	<field name="empleave_days" class="java.lang.String"/>
+	<field name="empleave_from" class="java.lang.String"/>
+	<field name="empleave_to" class="java.lang.String"/>
+	<field name="empleave_empid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="143" y="15" width="290" height="39" uuid="c9dda0f4-ead6-4769-87b4-9653d2c18d7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LEAVE REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="13" width="52" height="20" uuid="03117e53-61fb-458f-97bf-e3f819aaa73d"/>
+				<text><![CDATA[LEAVE ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="13" width="81" height="20" uuid="b5e91c6d-1b38-42cc-866d-d7ad009b02ec"/>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="13" width="64" height="20" uuid="bfdd00b7-aee8-409d-8909-df6a6f2fc659"/>
+				<text><![CDATA[REASON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="13" width="72" height="20" uuid="f39b2488-00ec-4569-93f7-f0910b356d05"/>
+				<text><![CDATA[LEAVE DAYS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="13" width="74" height="20" uuid="ac4f85ab-6c56-4ba9-9921-38f47870d13e"/>
+				<text><![CDATA[LEAVE FROM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="13" width="54" height="20" uuid="5b0ed6de-1909-45ff-8dbb-f6b76b864042"/>
+				<text><![CDATA[LEAVE TO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="13" width="50" height="20" uuid="ed255bcb-ca3b-494e-8b77-023257c24e56"/>
+				<text><![CDATA[EID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="19" width="52" height="20" uuid="8a234ecd-dcc5-4a13-baed-dbdbb612e3d2"/>
+				<textFieldExpression><![CDATA[$F{empleave_leveid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="19" width="81" height="20" uuid="e7a0c7bf-0aa3-4626-a7f8-53af26411d59"/>
+				<textFieldExpression><![CDATA[$F{empleave_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="19" width="64" height="20" uuid="e8816989-0ea0-403e-adfa-5b22ad9e44be"/>
+				<textFieldExpression><![CDATA[$F{empleave_reason}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="19" width="72" height="20" uuid="ae9b8e72-9867-4607-b016-c8c6c9e7c51e"/>
+				<textFieldExpression><![CDATA[$F{empleave_days}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="19" width="74" height="20" uuid="af39506f-d13e-417f-9efb-cffeea206b35"/>
+				<textFieldExpression><![CDATA[$F{empleave_from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="19" width="54" height="20" uuid="31a8452f-275d-44fb-91e4-0b80de08756c"/>
+				<textFieldExpression><![CDATA[$F{empleave_to}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="19" width="50" height="20" uuid="f9fd2ab0-fa24-4c04-96a5-c31c44094db6"/>
+				<textFieldExpression><![CDATA[$F{empleave_empid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

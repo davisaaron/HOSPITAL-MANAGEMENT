@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f21784fd-c51b-4891-9555-2a4df8414570">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     supplier.`CompanyID` AS supplier_CompanyID,
+     supplier.`Name` AS supplier_Name,
+     supplier.`TPNumber` AS supplier_TPNumber,
+     supplier.`Address` AS supplier_Address,
+     supplier.`EmailAddress` AS supplier_EmailAddress,
+     supplier.`AddedDate` AS supplier_AddedDate
+FROM
+     `supplier` supplier]]>
+	</queryString>
+	<field name="supplier_CompanyID" class="java.lang.Integer"/>
+	<field name="supplier_Name" class="java.lang.String"/>
+	<field name="supplier_TPNumber" class="java.lang.String"/>
+	<field name="supplier_Address" class="java.lang.String"/>
+	<field name="supplier_EmailAddress" class="java.lang.String"/>
+	<field name="supplier_AddedDate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="169" y="19" width="250" height="49" uuid="72fa17ad-a56e-4c7e-a96d-4e3869a169c0"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="14" width="61" height="20" uuid="8cf2afcf-3bbb-48c6-bc0c-21a705dcf111"/>
+				<text><![CDATA[CompanyID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="14" width="81" height="20" uuid="0f381617-c696-412c-bba2-e035754e5ccf"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="14" width="62" height="20" uuid="e943aafe-99d5-49e0-a4e5-76a383e5c728"/>
+				<text><![CDATA[TPNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="14" width="67" height="20" uuid="aeb47946-47dd-40cd-8ae7-14db0cb554de"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="14" width="100" height="20" uuid="ec8512c5-ceab-4c48-a15d-61d075aa5d56"/>
+				<text><![CDATA[EmailAddress]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="468" y="14" width="73" height="20" uuid="f6f76a40-ff10-4e8e-a394-6f3e80e87892"/>
+				<text><![CDATA[AddedDate]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="85" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="12" width="61" height="20" uuid="e74152d5-cbf9-47b4-8edb-3574e2bd2c1d"/>
+				<textFieldExpression><![CDATA[$F{supplier_CompanyID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="12" width="81" height="20" uuid="8e12fb43-d079-4541-985b-22cdb1432d2e"/>
+				<textFieldExpression><![CDATA[$F{supplier_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="12" width="62" height="20" uuid="76457a20-0cff-44de-925e-99a0b3015f84"/>
+				<textFieldExpression><![CDATA[$F{supplier_TPNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="12" width="67" height="73" uuid="24dd674a-93ac-4a94-b366-bda0e07400d1"/>
+				<textFieldExpression><![CDATA[$F{supplier_Address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="12" width="100" height="20" uuid="6d801674-2eee-4a46-8f0f-a535b85fff4b"/>
+				<textFieldExpression><![CDATA[$F{supplier_EmailAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="12" width="73" height="20" uuid="6d9212d7-3960-4c95-88ce-ae756efb2cfc"/>
+				<textFieldExpression><![CDATA[$F{supplier_AddedDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

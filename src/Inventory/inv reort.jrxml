@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"  pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="790dd38a-1ee8-4e18-a68a-85eaf7452236">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     inventory2.`IID` AS inventory2_IID,
+     inventory2.`IName` AS inventory2_IName,
+     inventory2.`Cat` AS inventory2_Cat,
+     inventory2.`IDescription` AS inventory2_IDescription,
+     inventory2.`Quan` AS inventory2_Quan,
+     inventory2.`UpurchaseCost` AS inventory2_UpurchaseCost,
+     inventory2.`TAmount` AS inventory2_TAmount,
+     inventory2.`PuDate` AS inventory2_PuDate
+FROM
+     `inventory2` inventory2]]>
+	</queryString>
+	<field name="inventory2_IID" class="java.lang.String"/>
+	<field name="inventory2_IName" class="java.lang.String"/>
+	<field name="inventory2_Cat" class="java.lang.String"/>
+	<field name="inventory2_IDescription" class="java.lang.String"/>
+	<field name="inventory2_Quan" class="java.lang.Integer"/>
+	<field name="inventory2_UpurchaseCost" class="java.lang.Double"/>
+	<field name="inventory2_TAmount" class="java.lang.Double"/>
+	<field name="inventory2_PuDate" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="122" y="22" width="313" height="31" uuid="d8f1a2a9-1420-45ff-b624-65355ac94f9d"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[INVENTORY REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="29" y="6" width="38" height="20" uuid="73d5f613-2af5-4558-8f37-940a2a6fd11a"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="6" width="51" height="20" uuid="2993d40f-70e5-46e4-8776-2508c01f7390"/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="6" width="61" height="20" uuid="16575ffe-c636-4fe0-ae9b-d1a50a7d642c"/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="6" width="68" height="20" uuid="47e04167-4feb-44de-bd7e-098ff63b717c"/>
+				<text><![CDATA[COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="6" width="100" height="20" uuid="f12c46fb-be1e-4a3f-b536-a1df0f390907"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="6" width="100" height="20" uuid="e6b6bfd1-48d2-4875-b667-c94e0790bc4c"/>
+				<text><![CDATA[ADD DATE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="29" y="14" width="38" height="20" uuid="6862996f-21fb-47b3-868b-217e4cb3f194"/>
+				<textFieldExpression><![CDATA[$F{inventory2_IID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="14" width="51" height="20" uuid="fefce747-6be5-4d1d-8e3c-074afe789c09"/>
+				<textFieldExpression><![CDATA[$F{inventory2_IName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="14" width="61" height="20" uuid="71654794-9d68-4822-b54a-23679a4cf284"/>
+				<textFieldExpression><![CDATA[$F{inventory2_Quan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="14" width="68" height="20" uuid="f6255753-5fad-4bed-9487-6eb4209f813b"/>
+				<textFieldExpression><![CDATA[$F{inventory2_UpurchaseCost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="14" width="100" height="20" uuid="1da2f83e-daf8-49cd-8ec3-3f76bc96faf0"/>
+				<textFieldExpression><![CDATA[$F{inventory2_TAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="14" width="100" height="20" uuid="4a923c8d-dba7-481c-9ce6-be65288f76bd"/>
+				<textFieldExpression><![CDATA[$F{inventory2_PuDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

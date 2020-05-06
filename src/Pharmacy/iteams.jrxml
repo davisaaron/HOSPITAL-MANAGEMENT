@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef5586fd-77a9-4dc0-886c-6e927c618574">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     item.`ItemID` AS item_ItemID,
+     item.`ItemName` AS item_ItemName,
+     item.`Type` AS item_Type,
+     item.`OTC` AS item_OTC,
+     item.`DrugType` AS item_DrugType,
+     item.`Availability` AS item_Availability,
+     item.`sel_price` AS item_sel_price,
+     item.`Last_Per_Price` AS item_Last_Per_Price
+FROM
+     `item` item]]>
+	</queryString>
+	<field name="item_ItemID" class="java.lang.Integer"/>
+	<field name="item_ItemName" class="java.lang.String"/>
+	<field name="item_Type" class="java.lang.String"/>
+	<field name="item_OTC" class="java.lang.String"/>
+	<field name="item_DrugType" class="java.lang.String"/>
+	<field name="item_Availability" class="java.lang.Integer"/>
+	<field name="item_sel_price" class="java.lang.Double"/>
+	<field name="item_Last_Per_Price" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="206" y="25" width="185" height="33" uuid="d6a227ff-4a0b-4f49-9596-cc02353fd172"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ITEMS REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="63" height="20" uuid="72ef57b7-a985-4197-94b4-a348f1e9c010"/>
+				<text><![CDATA[ItemID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="2" width="81" height="20" uuid="e946bfa4-7143-4957-9814-bd6a54352135"/>
+				<text><![CDATA[ItemName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="2" width="65" height="20" uuid="d6de926f-046a-4763-b3d0-94b00a3d03f4"/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="0" width="52" height="20" uuid="a7ed3a81-d6fb-45af-9e28-e81f944602f8"/>
+				<text><![CDATA[DrugType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="55" height="20" uuid="56577e41-2bbd-4391-a035-065f5fe2367d"/>
+				<text><![CDATA[Availability]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="0" width="74" height="20" uuid="889f6eb2-52e5-40cb-b7c2-f1ff7bf7899c"/>
+				<text><![CDATA[sel_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="2" width="76" height="20" uuid="6961978e-23e0-4a20-91fa-62ffd5674e29"/>
+				<text><![CDATA[Last_Per_Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="11" width="63" height="20" uuid="501e2aab-2c64-4b65-a0a2-7de8687e6807"/>
+				<textFieldExpression><![CDATA[$F{item_ItemID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="11" width="81" height="20" uuid="917eb2db-0834-49b0-8c6c-f67eac87b5ba"/>
+				<textFieldExpression><![CDATA[$F{item_ItemName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="11" width="65" height="20" uuid="a0c703b7-322e-403c-8474-1267ebf1aa2f"/>
+				<textFieldExpression><![CDATA[$F{item_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="11" width="52" height="20" uuid="258d22fb-0e28-43c9-b553-40e756d8fae3"/>
+				<textFieldExpression><![CDATA[$F{item_DrugType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="11" width="55" height="20" uuid="3f636d49-c4f4-4c9d-b56b-d4df9c3ba382"/>
+				<textFieldExpression><![CDATA[$F{item_Availability}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="11" width="74" height="20" uuid="e3d14ccf-61ae-4291-9d59-d88e530cd383"/>
+				<textFieldExpression><![CDATA[$F{item_sel_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="11" width="62" height="20" uuid="0a622b28-7a40-4f6b-8243-081927aa598f"/>
+				<textFieldExpression><![CDATA[$F{item_Last_Per_Price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
