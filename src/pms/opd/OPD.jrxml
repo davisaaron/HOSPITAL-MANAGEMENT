@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"  pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b154854d-f0b2-45b9-9701-f21edfd3f004">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     opd.`opdID` AS opd_opdID,
+     opd.`title` AS opd_title,
+     opd.`fname` AS opd_fname,
+     opd.`lname` AS opd_lname,
+     opd.`age` AS opd_age,
+     opd.`contact_no` AS opd_contact_no,
+     opd.`visit_type` AS opd_visit_type,
+     opd.`payment` AS opd_payment
+FROM
+     `opd` opd]]>
+	</queryString>
+	<field name="opd_opdID" class="java.lang.Integer"/>
+	<field name="opd_title" class="java.lang.String"/>
+	<field name="opd_fname" class="java.lang.String"/>
+	<field name="opd_lname" class="java.lang.String"/>
+	<field name="opd_age" class="java.lang.Integer"/>
+	<field name="opd_contact_no" class="java.lang.String"/>
+	<field name="opd_visit_type" class="java.lang.String"/>
+	<field name="opd_payment" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="169" y="13" width="226" height="46" uuid="6a6e15d3-0894-4ac6-a718-3e1ae5e3b95d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[OPD REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="55" height="20" uuid="c0d8c64b-04ae-4d04-9a50-ed73406cd199"/>
+				<text><![CDATA[OPD ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="57" height="20" uuid="ea0f53a4-d76f-4cd0-ad98-61b64b970092"/>
+				<text><![CDATA[TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="76" height="20" uuid="c44672db-25a3-489c-a0a2-d506c715a2a0"/>
+				<text><![CDATA[FNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="70" height="20" uuid="298fbe49-7695-4c7b-9468-3bd3ea8a9641"/>
+				<text><![CDATA[LNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="29" height="20" uuid="5a2f18a6-576d-4fd9-a752-71ab86fa9478"/>
+				<text><![CDATA[AGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="0" width="76" height="20" uuid="9e4e572f-3bbd-41ff-9d91-5aa0ac70582f"/>
+				<text><![CDATA[CONTACT NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="80" height="20" uuid="44b60036-3bdf-41eb-b7b0-69b69c6dd3fb"/>
+				<text><![CDATA[PAYMENT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="10" width="55" height="20" uuid="2d11f5b9-5c75-44cb-860f-61979ac1e425"/>
+				<textFieldExpression><![CDATA[$F{opd_opdID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="10" width="57" height="20" uuid="124a825e-b366-44ae-9c8e-702d829a7b76"/>
+				<textFieldExpression><![CDATA[$F{opd_title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="10" width="76" height="20" uuid="392b2348-c6f0-405f-8762-b60638559433"/>
+				<textFieldExpression><![CDATA[$F{opd_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="10" width="70" height="20" uuid="a2fc9bc7-67e4-483d-95a3-2faf9b0be707"/>
+				<textFieldExpression><![CDATA[$F{opd_lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="10" width="29" height="20" uuid="774899dc-00ac-4662-83d2-1b0317846eb9"/>
+				<textFieldExpression><![CDATA[$F{opd_age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="10" width="76" height="20" uuid="72ba8630-789d-4074-8236-ee3d535691fa"/>
+				<textFieldExpression><![CDATA[$F{opd_contact_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="10" width="80" height="20" uuid="5a86b8a0-112c-43d7-915c-5dd435e6a44c"/>
+				<textFieldExpression><![CDATA[$F{opd_payment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

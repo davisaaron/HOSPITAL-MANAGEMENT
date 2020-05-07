@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"  pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="742f7fac-c16a-47f6-9065-490b722fba8c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     maternity.`patientID` AS maternity_patientID,
+     maternity.`title` AS maternity_title,
+     maternity.`fname` AS maternity_fname,
+     maternity.`lname` AS maternity_lname,
+     maternity.`dob` AS maternity_dob,
+     maternity.`age` AS maternity_age,
+     maternity.`NIC` AS maternity_NIC,
+     maternity.`perm_add` AS maternity_perm_add,
+     maternity.`mar_status` AS maternity_mar_status,
+     maternity.`res_add` AS maternity_res_add,
+     maternity.`h_contact` AS maternity_h_contact,
+     maternity.`m_contact` AS maternity_m_contact,
+     maternity.`duedate` AS maternity_duedate,
+     maternity.`fam_doctor` AS maternity_fam_doctor,
+     maternity.`mat_doctor` AS maternity_mat_doctor,
+     maternity.`pediat` AS maternity_pediat,
+     maternity.`room_cat` AS maternity_room_cat,
+     maternity.`room_no` AS maternity_room_no,
+     maternity.`room_rate` AS maternity_room_rate,
+     maternity.`nok_title` AS maternity_nok_title,
+     maternity.`nok_fname` AS maternity_nok_fname,
+     maternity.`nok_lname` AS maternity_nok_lname,
+     maternity.`nok_nic` AS maternity_nok_nic,
+     maternity.`nok_relat` AS maternity_nok_relat,
+     maternity.`nok_add` AS maternity_nok_add,
+     maternity.`nok_contact` AS maternity_nok_contact,
+     maternity.`tot_amount` AS maternity_tot_amount
+FROM
+     `maternity` maternity]]>
+	</queryString>
+	<field name="maternity_patientID" class="java.lang.Integer"/>
+	<field name="maternity_title" class="java.lang.String"/>
+	<field name="maternity_fname" class="java.lang.String"/>
+	<field name="maternity_lname" class="java.lang.String"/>
+	<field name="maternity_dob" class="java.sql.Date"/>
+	<field name="maternity_age" class="java.lang.Integer"/>
+	<field name="maternity_NIC" class="java.lang.String"/>
+	<field name="maternity_perm_add" class="java.lang.String"/>
+	<field name="maternity_mar_status" class="java.lang.String"/>
+	<field name="maternity_res_add" class="java.lang.String"/>
+	<field name="maternity_h_contact" class="java.lang.Integer"/>
+	<field name="maternity_m_contact" class="java.lang.Integer"/>
+	<field name="maternity_duedate" class="java.sql.Date"/>
+	<field name="maternity_fam_doctor" class="java.lang.String"/>
+	<field name="maternity_mat_doctor" class="java.lang.String"/>
+	<field name="maternity_pediat" class="java.lang.String"/>
+	<field name="maternity_room_cat" class="java.lang.String"/>
+	<field name="maternity_room_no" class="java.lang.String"/>
+	<field name="maternity_room_rate" class="java.lang.Double"/>
+	<field name="maternity_nok_title" class="java.lang.String"/>
+	<field name="maternity_nok_fname" class="java.lang.String"/>
+	<field name="maternity_nok_lname" class="java.lang.String"/>
+	<field name="maternity_nok_nic" class="java.lang.String"/>
+	<field name="maternity_nok_relat" class="java.lang.String"/>
+	<field name="maternity_nok_add" class="java.lang.String"/>
+	<field name="maternity_nok_contact" class="java.lang.Integer"/>
+	<field name="maternity_tot_amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="248" y="12" width="293" height="51" uuid="1d4bdf70-de4a-4b11-900d-23ff552e8242"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MATERNITY REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="62" height="20" uuid="c50ec791-6376-4433-bc66-9cf00d040c1d"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="0" width="62" height="20" uuid="2ffb645d-4ce6-4618-87d4-c3bc8d2457fd"/>
+				<text><![CDATA[FNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="62" height="20" uuid="8b724779-802b-4583-8786-2c049fa77819"/>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="0" width="62" height="20" uuid="e2fe9f14-c6d1-4dee-a897-31686ab86222"/>
+				<text><![CDATA[AGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="0" width="62" height="20" uuid="531427ee-709d-4e66-9b70-03957c734fa2"/>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="62" height="20" uuid="1bc6c88f-cb39-4ca7-a1a4-533e5ba9c0d7"/>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="0" width="62" height="20" uuid="1a8084a6-2d7d-40ce-87bc-8899c13edc88"/>
+				<text><![CDATA[DUEDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="0" width="62" height="20" uuid="28ecd748-50d5-46e4-89e4-f80c2827b106"/>
+				<text><![CDATA[FAM DR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="496" y="0" width="62" height="20" uuid="402efa8b-8c56-431f-b4e8-7f9e1de82d34"/>
+				<text><![CDATA[MATERNTY DR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="558" y="0" width="62" height="20" uuid="0ddade3d-4e0a-4315-a2f3-2a8eeec610c6"/>
+				<text><![CDATA[ROOMRATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="620" y="0" width="62" height="20" uuid="52fbf034-ffb8-4a81-9f68-6d41c5f47a3f"/>
+				<text><![CDATA[CONTACT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="682" y="0" width="62" height="20" uuid="1d136e68-b7ce-4aed-94b1-d1aae40e0965"/>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="62" height="20" uuid="05d00ccb-9dbb-47b4-aa0f-e42cf781e30b"/>
+				<textFieldExpression><![CDATA[$F{maternity_patientID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="0" width="62" height="20" uuid="29fadf2d-73d4-4441-ad84-99039214cbc5"/>
+				<textFieldExpression><![CDATA[$F{maternity_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="62" height="20" uuid="d6a13f7b-0764-4758-ba04-34d1d69e82e4"/>
+				<textFieldExpression><![CDATA[$F{maternity_dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="62" height="20" uuid="0030cddf-8dfd-4dfd-b5c5-f133022d58d5"/>
+				<textFieldExpression><![CDATA[$F{maternity_age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="0" width="62" height="20" uuid="08475e9b-4f46-4bdf-9c7b-cac2a9f7dcb1"/>
+				<textFieldExpression><![CDATA[$F{maternity_NIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="62" height="49" uuid="eab8d042-656c-4cf8-bbcb-c42a5ff71683"/>
+				<textFieldExpression><![CDATA[$F{maternity_perm_add}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="62" height="20" uuid="1e11c38e-52a0-4693-b202-94c7b0b4cc08"/>
+				<textFieldExpression><![CDATA[$F{maternity_duedate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="0" width="62" height="20" uuid="17d2401a-049b-41a0-a571-1f7d1ba49055"/>
+				<textFieldExpression><![CDATA[$F{maternity_fam_doctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="496" y="0" width="62" height="20" uuid="227f3145-d03a-4826-93f1-7c35c391c00d"/>
+				<textFieldExpression><![CDATA[$F{maternity_mat_doctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="0" width="62" height="20" uuid="19a80aec-5b0a-48b8-822f-acf20e71585d"/>
+				<textFieldExpression><![CDATA[$F{maternity_room_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="0" width="62" height="20" uuid="f422f2b2-505f-4ba6-a9ef-b9a1600a5be7"/>
+				<textFieldExpression><![CDATA[$F{maternity_nok_contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="0" width="62" height="20" uuid="c74a0a8e-5704-4d6a-a909-283d28f2303d"/>
+				<textFieldExpression><![CDATA[$F{maternity_tot_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

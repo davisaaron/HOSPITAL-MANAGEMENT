@@ -7,6 +7,7 @@ package pms.opd;
 
 import Extras.Validation;
 import Extras.ViewDBRecords;
+import Pharmacy.Report;
 import hospitalhomepage.HomePage;
 import java.awt.Component;
 import java.awt.Container;
@@ -25,6 +26,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -192,6 +202,7 @@ public class opdGUI extends javax.swing.JFrame {
         opd_ID = new javax.swing.JTextField();
         deletTestNAME = new javax.swing.JButton();
         UpdateDrugBtnAtItem = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TableAtMain = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
@@ -677,7 +688,7 @@ public class opdGUI extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        deletTestNAME.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        deletTestNAME.setFont(deletTestNAME.getFont().deriveFont(deletTestNAME.getFont().getSize()+7f));
         deletTestNAME.setText("DELETE");
         deletTestNAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -686,10 +697,17 @@ public class opdGUI extends javax.swing.JFrame {
         });
 
         UpdateDrugBtnAtItem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        UpdateDrugBtnAtItem.setText("Update ");
+        UpdateDrugBtnAtItem.setText("UPDATE");
         UpdateDrugBtnAtItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateDrugBtnAtItemActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("REPORT");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -712,6 +730,8 @@ public class opdGUI extends javax.swing.JFrame {
                         .addComponent(deletTestNAME)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(UpdateDrugBtnAtItem)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(labpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -730,11 +750,14 @@ public class opdGUI extends javax.swing.JFrame {
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(channelpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deletTestNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opd_add_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UpdateDrugBtnAtItem))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(deletTestNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(opd_add_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(UpdateDrugBtnAtItem))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
 
@@ -1185,6 +1208,28 @@ public class opdGUI extends javax.swing.JFrame {
               // TODO add your handling code here:
       
     }//GEN-LAST:event_UpdateDrugBtnAtItemActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   try {
+              Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
+           JasperDesign jdesign=JRXmlLoader.load("D:\\aaron\\New folder\\Yarl_Mother_Care\\src\\pms\\opd\\OPD.jrxml");
+           String query ="select * from opd";
+           
+             JRDesignQuery updateQuery = new JRDesignQuery();
+             updateQuery.setText(query);
+            JasperReport jasp=JasperCompileManager.compileReport(jdesign);
+           JasperPrint jprint=JasperFillManager.fillReport(jasp,null,conn);
+           JasperViewer.viewReport(jprint);
+        } 
+        catch (ClassNotFoundException ex) {
+            
+        } catch (JRException ex) {
+            Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
+        }         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void showTableData(){
         try{
             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
@@ -1374,6 +1419,7 @@ public class opdGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> field_combo;
     private javax.swing.JTextField first_name;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
