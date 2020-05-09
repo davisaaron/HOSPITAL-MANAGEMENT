@@ -35,6 +35,9 @@ import Pharmacy.Report;
 import Pharmacy.Stock_management;
 import hospitalhomepage.HomePage;
 import hospitalhomepage.LogIn;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 /**
  *
  * @author kiros
@@ -2127,14 +2130,23 @@ public class Vehicle extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
-            String path= "C:\\Users\\USER\\Desktop\\Desktop Folders\\ITP_SLIIT\\MY ITP\\After prototype\\Vehicle Details.jrxml";
-            
-            JasperReport jr = JasperCompileManager.compileReport(path);            
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, con);
-            JasperViewer.viewReport(jp,false);
+       
+        
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+     try {
+              Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
+           JasperDesign jdesign=JRXmlLoader.load("D:\\aaron\\New folder\\Yarl_Mother_Care\\src\\vehicle\\management\\system\\maintaniance.jrxml");
+           String query ="select * from vmaintenance";
+           
+             JRDesignQuery updateQuery = new JRDesignQuery();
+             updateQuery.setText(query);
+            JasperReport jasp=JasperCompileManager.compileReport(jdesign);
+           JasperPrint jprint=JasperFillManager.fillReport(jasp,null,conn);
+           JasperViewer.viewReport(jprint);
         } 
         catch (ClassNotFoundException ex) {
             
@@ -2142,29 +2154,7 @@ public class Vehicle extends javax.swing.JFrame {
             Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-         Date date = new Date();
-        Format formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String date1 = formatter.format(date);
-        HashMap parameter = new HashMap();
-        String test= JOptionPane.showInputDialog("Please input the date like YYYY/MM/dd ");
-        parameter.put("Date", test);
-
-        try {
-            String path="C:\\Users\\USER\\Desktop\\Desktop Folders\\ITP_SLIIT\\MY ITP\\After prototype\\maintenance.jrxml";
-            
-            JasperReport jr = JasperCompileManager.compileReport(path);  
-            JasperPrint jp = JasperFillManager.fillReport(jr, parameter, conn);
-            JasperViewer.viewReport(jp,false);
-        } catch (JRException ex) {
-            Logger.getLogger(Stock_management.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null,ex);
-        }
+        } 
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void txt_RegNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_RegNoActionPerformed

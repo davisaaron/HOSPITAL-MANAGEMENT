@@ -752,8 +752,8 @@ public class AdmittedPatientDetails extends javax.swing.JFrame {
       try {
               Class.forName("com.mysql.jdbc.Driver");
             java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
-           JasperDesign jdesign=JRXmlLoader.load("D:\\aaron\\New folder\\Yarl_Mother_Care\\src\\finance_management\\accountblancing.jrxml");
-           String query ="select * from balancing";
+           JasperDesign jdesign=JRXmlLoader.load("D:\\aaron\\New folder\\Yarl_Mother_Care\\src\\In_patient\\report1.jrxml");
+           String query ="select * from patient_booking";
            
              JRDesignQuery updateQuery = new JRDesignQuery();
              updateQuery.setText(query);
