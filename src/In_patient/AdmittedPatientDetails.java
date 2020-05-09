@@ -1,6 +1,7 @@
 
 package In_patient;
 
+import Pharmacy.Report;
 import static java.lang.Thread.sleep;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,6 +22,10 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import Pharmacy.Stock_management;
+import java.sql.DriverManager;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 
 public class AdmittedPatientDetails extends javax.swing.JFrame {
@@ -368,21 +373,9 @@ public class AdmittedPatientDetails extends javax.swing.JFrame {
     
     
     public void report(){
-        Connection conn = MySqlConnect.connectDB();
-         HashMap parameter = new HashMap();
-        String paymentId= JOptionPane.showInputDialog("Please insert the Payment ID");
-        parameter.put("paymentId",paymentId);
+        
 
-        try {
-            String path="C:\\Users\\USER\\Desktop\\Desktop Folders\\ITP_SLIIT\\MY ITP\\After prototype\\wardBill.jrxml";
-            
-            JasperReport jr = JasperCompileManager.compileReport(path);  
-            JasperPrint jp = JasperFillManager.fillReport(jr, parameter, conn);
-            JasperViewer.viewReport(jp,false);
-        } catch (JRException ex) {
-            Logger.getLogger(Stock_management.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null,ex);
-        }
+      
     
     
     }
@@ -755,11 +748,26 @@ public class AdmittedPatientDetails extends javax.swing.JFrame {
             Logger.getLogger(AdmittedPatientDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
         discharge_patient();
-        
-        inPatient_management inp=new inPatient_management();
-       inp.setVisible(true);
        
-       report();
+      try {
+              Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/yarlmothercare", "root", "");
+           JasperDesign jdesign=JRXmlLoader.load("D:\\aaron\\New folder\\Yarl_Mother_Care\\src\\finance_management\\accountblancing.jrxml");
+           String query ="select * from balancing";
+           
+             JRDesignQuery updateQuery = new JRDesignQuery();
+             updateQuery.setText(query);
+            JasperReport jasp=JasperCompileManager.compileReport(jdesign);
+           JasperPrint jprint=JasperFillManager.fillReport(jasp,null,conn);
+           JasperViewer.viewReport(jprint);
+        } 
+        catch (ClassNotFoundException ex) {
+            
+        } catch (JRException ex) {
+            Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Report.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     

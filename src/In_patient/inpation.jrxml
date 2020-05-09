@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"  pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ffbdd1df-06ad-4b70-90f6-b01fa1e086fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     patient_booking.`booking_id` AS patient_booking_booking_id,
+     patient_booking.`patient_name` AS patient_booking_patient_name,
+     patient_booking.`contact_no` AS patient_booking_contact_no,
+     patient_booking.`gender` AS patient_booking_gender,
+     patient_booking.`amount` AS patient_booking_amount
+FROM
+     `patient_booking` patient_booking]]>
+	</queryString>
+	<field name="patient_booking_booking_id" class="java.lang.Integer"/>
+	<field name="patient_booking_patient_name" class="java.lang.String"/>
+	<field name="patient_booking_contact_no" class="java.lang.String"/>
+	<field name="patient_booking_gender" class="java.lang.String"/>
+	<field name="patient_booking_amount" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="124" y="10" width="302" height="59" uuid="296e98ae-69d7-4743-8c51-bb85eec25df8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[IN PATIENT REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="06aa70ab-e46f-4cc7-92fa-13852019c454"/>
+				<text><![CDATA[BOOKING ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="6b68dd45-e787-48e7-a2d2-e5cee7302572"/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="5932cac9-57d0-4be0-bdba-a15baa401bd4"/>
+				<text><![CDATA[CONTACT NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="31fc5643-632d-4829-9c2f-6115a3f73183"/>
+				<text><![CDATA[GENDER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="d2849425-f11b-4fa8-ad0f-e90b1961e8ae"/>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="052be937-dd85-4b72-875e-5e70da8e362f"/>
+				<textFieldExpression><![CDATA[$F{patient_booking_booking_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="7e99c159-3929-4dc7-9300-a56a0b84474b"/>
+				<textFieldExpression><![CDATA[$F{patient_booking_patient_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="4e1c3622-b5fe-4207-9642-4ec801ea29db"/>
+				<textFieldExpression><![CDATA[$F{patient_booking_contact_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="fc7293e3-13db-4d00-9796-1b3c45c662f6"/>
+				<textFieldExpression><![CDATA[$F{patient_booking_gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="ff2c613f-15bb-4abb-8ee6-4713fbdfbe8c"/>
+				<textFieldExpression><![CDATA[$F{patient_booking_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

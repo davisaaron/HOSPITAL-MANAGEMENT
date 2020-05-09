@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"  pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f9656d82-0069-41c7-b006-94ffd0484628">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     balancing.`balance_id` AS balancing_balance_id,
+     balancing.`date` AS balancing_date,
+     balancing.`income` AS balancing_income,
+     balancing.`spend` AS balancing_spend,
+     balancing.`balance` AS balancing_balance,
+     balancing.`net_growth` AS balancing_net_growth,
+     balancing.`stock` AS balancing_stock
+FROM
+     `balancing` balancing]]>
+	</queryString>
+	<field name="balancing_balance_id" class="java.lang.Integer"/>
+	<field name="balancing_date" class="java.sql.Date"/>
+	<field name="balancing_income" class="java.lang.Double"/>
+	<field name="balancing_spend" class="java.lang.Double"/>
+	<field name="balancing_balance" class="java.lang.Double"/>
+	<field name="balancing_net_growth" class="java.lang.Double"/>
+	<field name="balancing_stock" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="26" width="197" height="26" uuid="a9b3bc08-73ed-4999-8488-311315be42a9"/>
+				<textElement>
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[BLANCEING REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="33" height="20" uuid="ff1a9e7c-2655-436c-bf4c-07d8c7aaae93"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="0" width="84" height="20" uuid="f4ffdc13-2a72-4316-9c79-8f5ee8dc860e"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="2" width="98" height="20" uuid="d554d8ff-25ad-4c56-b4de-ffc54f6a0f73"/>
+				<text><![CDATA[INCOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="0" width="100" height="20" uuid="509854cf-9d3a-46e7-b3b7-a46fb29080da"/>
+				<text><![CDATA[SPEND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="2" width="113" height="20" uuid="84d48773-1b48-421c-9cb5-8d9e47bf098b"/>
+				<text><![CDATA[NET GROWTH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="12" width="33" height="20" uuid="22cab349-078a-4327-8599-cd552c55b916"/>
+				<textFieldExpression><![CDATA[$F{balancing_balance_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="12" width="84" height="20" uuid="c741f89c-efb0-4bd0-86ed-3f0b3dfc5b4e"/>
+				<textFieldExpression><![CDATA[$F{balancing_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="12" width="98" height="20" uuid="d88334de-7835-483e-b6a1-f4e0af5c0755"/>
+				<textFieldExpression><![CDATA[$F{balancing_income}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="12" width="100" height="20" uuid="90d6ff1a-0abf-4644-a421-b89de40fc96a"/>
+				<textFieldExpression><![CDATA[$F{balancing_spend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="12" width="113" height="20" uuid="bf4c2f3f-10f8-4451-abc4-cfda0f9d4cad"/>
+				<textFieldExpression><![CDATA[$F{balancing_net_growth}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
